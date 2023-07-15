@@ -28,11 +28,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(AbstractGuiScreen.class)
 public abstract class AbstractGuiScreenMixin_v1_12<T> {
 
-    @Shadow public AbstractGuiScreen.Background background;
-    @Shadow public GuiLabel title;
-
+    @Shadow private AbstractGuiScreen.Background background;
+    @Shadow private GuiLabel title;
     @Shadow public abstract GuiScreen toMinecraft();
-
     private ReadableDimension size;
     private RenderInfo renderInfo;
     private static int lunarPanoramaTimer;
@@ -52,8 +50,10 @@ public abstract class AbstractGuiScreenMixin_v1_12<T> {
         this.renderInfo = x;
     }
 
-
-    // A hack so that when it checks renderInfo.layer == 0, it'll return -4 so we can overwrite it...
+    /**
+     * @author Tre
+     * @reason A hack so that when it checks renderInfo.layer == 0, it'll return -4 so we can overwrite it...
+     */
     @Redirect(
             method = "draw",
             at = @At(
@@ -66,6 +66,7 @@ public abstract class AbstractGuiScreenMixin_v1_12<T> {
     public int ichor$layer(RenderInfo instance) {
         return -4;
     }
+
     @Inject(
             method = "draw",
             at = @At("HEAD")

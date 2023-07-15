@@ -2,25 +2,17 @@ package com.moonsworth.lunar.replaymod.v1_19.mixin;
 
 import com.moonsworth.lunar.client.util.Ref;
 import com.replaymod.render.capturer.*;
-import com.replaymod.render.frame.OpenGlFrame;
 import com.replaymod.render.rendering.Frame;
 import com.replaymod.render.utils.ByteBufferPool;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 import java.nio.ByteBuffer;
 
 @Mixin(PboOpenGlFrameCapturer.class)
 public abstract class PboOpenGlFrameCapturerMixin_v1_19<F extends Frame, D extends Enum<D> & CaptureData> extends OpenGlFrameCapturer<F, D> {
-
-    @Shadow
-    public D[] data;
-
-    @Shadow
-    public abstract F create(OpenGlFrame[] openGlFrames);
 
     public PboOpenGlFrameCapturerMixin_v1_19(WorldRenderer worldRenderer, RenderInfo renderInfo) {
         super(worldRenderer, renderInfo);

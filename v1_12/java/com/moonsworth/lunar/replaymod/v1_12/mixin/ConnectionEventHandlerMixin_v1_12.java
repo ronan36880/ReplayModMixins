@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ConnectionEventHandler.class)
 public class ConnectionEventHandlerMixin_v1_12 implements ConnectionEventHandlerBridge {
 
-    @Shadow public GuiRecordingControls guiControls;
+    @Shadow private GuiRecordingControls guiControls;
 
     // Auto start recording
     @Redirect(
@@ -78,7 +78,6 @@ public class ConnectionEventHandlerMixin_v1_12 implements ConnectionEventHandler
     public void ichor$autoRecord(NetworkManager serverInfo, CallbackInfo ci) {
         ReplayModGuiLink_v1_12.recordedThisSession = true;
     }
-
 
     @Override
     public GuiRecordingControls brige$getGuiControls() {

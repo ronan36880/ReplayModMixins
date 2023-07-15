@@ -63,7 +63,7 @@ public abstract class AbstractGuiButtonMixin_v1_16<T extends AbstractGuiButton<T
         int color = 0x7FFFFFFF;
         if (!isEnabled()) {
             color = 0x808080;
-        } else if (isMouseHovering(new Point(renderInfo.mouseX, renderInfo.mouseY))) {
+        } else if (hover) {
             color = 0xffffa0;
         }
 

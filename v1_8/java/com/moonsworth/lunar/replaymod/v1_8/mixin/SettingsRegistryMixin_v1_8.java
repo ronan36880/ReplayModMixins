@@ -3,9 +3,7 @@ package com.moonsworth.lunar.replaymod.v1_8.mixin;
 import com.moonsworth.lunar.replaymod.v1_8.link.LunarSettingKeys;
 import com.replaymod.core.SettingsRegistry;
 import com.replaymod.core.events.SettingsChangedCallback;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -15,7 +13,8 @@ import java.util.Map;
 @Mixin(SettingsRegistry.class)
 public class SettingsRegistryMixin_v1_8 {
 
-    @Shadow public Map<SettingsRegistry.SettingKey<?>, Object> settings;
+    @Final
+    @Shadow private Map<SettingsRegistry.SettingKey<?>, Object> settings;
 
     @Inject(
             method = "save",
@@ -36,7 +35,8 @@ public class SettingsRegistryMixin_v1_8 {
     }
 
     /**
-     * @author Tre - we don't wanna use their settings.
+     * @author Tre
+     * @reason We don't wanna use their settings.
      */
     @Overwrite
     public void register(SettingsRegistry.SettingKey<?> key) {

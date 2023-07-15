@@ -16,7 +16,7 @@ public class AbstractGuiElement_v1_8 {
     @Shadow
     @Final
     @Mutable
-    public static ResourceLocation TEXTURE;
+    protected static ResourceLocation TEXTURE;
 
     @Inject(
             method = "<init>()V",

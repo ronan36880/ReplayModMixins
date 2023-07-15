@@ -9,7 +9,8 @@ import org.spongepowered.asm.mixin.Overwrite;
 public class GuiRecordingOverlayMixin_v1_19 {
 
     /**
-     * @author Tre - We do not want to render their overlay, Lunar will handle this for us.
+     * @author Tre
+     * @reason We do not want to render their overlay, Lunar will handle this for us.
      */
     @Overwrite
     public void renderRecordingIndicator(PoseStack stack) {

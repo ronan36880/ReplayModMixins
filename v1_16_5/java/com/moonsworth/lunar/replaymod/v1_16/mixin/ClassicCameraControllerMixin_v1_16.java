@@ -20,7 +20,8 @@ public class ClassicCameraControllerMixin_v1_16 {
     @Shadow public double DECAY;
 
     /**
-     * @author Tre - Completely overdo their speed controller
+     * @author Tre
+     * @reason Completely overdo their speed controller
      */
     @Overwrite
     public void setCameraMaximumSpeed(double maxSpeed) {

@@ -25,7 +25,7 @@ import java.util.function.Function;
 public abstract class AbstractGuiDropdownMenuMixin_v1_8<V, T extends AbstractGuiDropdownMenu<V, T>> extends AbstractComposedGuiElement {
 
     @Shadow
-    public Function<V, String> toString;
+    private Function<V, String> toString;
 
     @Shadow
     public abstract V getSelectedValue();

@@ -74,5 +74,4 @@ public class ConnectionEventHandlerMixin_v1_17 {
         ReplayModGuiLink_Impl.recordedThisSession = true;
     }
 
-
 }

@@ -2,25 +2,26 @@ package com.moonsworth.lunar.replaymod.v1_8.mixin;
 
 import com.moonsworth.lunar.client.util.MathUtil;
 import com.replaymod.replay.camera.ClassicCameraController;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.*;
 
 @Mixin(ClassicCameraController.class)
 public class ClassicCameraControllerMixin_v1_8 {
 
-    @Shadow public double MAX_SPEED;
+    @Shadow private double MAX_SPEED;
 
-    @Shadow public static double LOWER_SPEED;
+    @Final
+    @Shadow private static double LOWER_SPEED;
 
-    @Shadow public static double UPPER_SPEED;
+    @Final
+    @Shadow private static double UPPER_SPEED;
 
-    @Shadow public double THRESHOLD;
+    @Shadow private double THRESHOLD;
 
-    @Shadow public double DECAY;
+    @Shadow private double DECAY;
 
     /**
-     * @author Tre - Completely overdo their speed controller
+     * @author Tre
+     * @reason Completely overdo their speed controller
      */
     @Overwrite
     public void setCameraMaximumSpeed(double maxSpeed) {

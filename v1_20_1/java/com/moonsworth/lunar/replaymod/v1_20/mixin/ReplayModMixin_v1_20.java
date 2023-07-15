@@ -14,7 +14,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-
 @Mixin(ReplayMod.class)
 public abstract class ReplayModMixin_v1_20 implements Translatable {
 

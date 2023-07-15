@@ -9,10 +9,11 @@ import org.spongepowered.asm.mixin.Shadow;
 @Mixin(DisableFastRender.class)
 public class DisableFastRenderMixin_v1_17 {
     @Shadow
-    private boolean wasFastRender;
+    public boolean wasFastRender;
 
     /**
      * @author Gecko
+     * @reason replace reflection with bridge
      */
     @Overwrite
     public void onRenderBegin() {
@@ -20,11 +21,11 @@ public class DisableFastRenderMixin_v1_17 {
             wasFastRender = optifine.getConfig().hasFastRender();
             optifine.getConfig().setFastRender(false);
         });
-
     }
 
     /**
      * @author Gecko
+     * @reason replace reflection with bridge
      */
     @Overwrite
     public void onRenderEnd() {

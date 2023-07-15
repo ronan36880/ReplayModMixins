@@ -12,8 +12,8 @@ public class DisableFastRenderMixin_v1_20 {
     public boolean wasFastRender;
 
     /**
-     * @reason replace reflection with bridge
      * @author Gecko
+     * @reason replace reflection with bridge
      */
     @Overwrite
     public void onRenderBegin() {
@@ -24,8 +24,8 @@ public class DisableFastRenderMixin_v1_20 {
     }
 
     /**
-     * @reason replace reflection with bridge
      * @author Gecko
+     * @reason replace reflection with bridge
      */
     @Overwrite
     public void onRenderEnd() {

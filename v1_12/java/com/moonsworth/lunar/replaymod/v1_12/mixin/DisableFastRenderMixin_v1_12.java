@@ -13,6 +13,7 @@ public class DisableFastRenderMixin_v1_12 {
 
     /**
      * @author Gecko
+     * @reason replace reflection with bridge
      */
     @Overwrite
     public void onRenderBegin() {
@@ -20,11 +21,11 @@ public class DisableFastRenderMixin_v1_12 {
             wasFastRender = optifine.getConfig().hasFastRender();
             optifine.getConfig().setFastRender(false);
         });
-
     }
 
     /**
      * @author Gecko
+     * @reason replace reflection with bridge
      */
     @Overwrite
     public void onRenderEnd() {

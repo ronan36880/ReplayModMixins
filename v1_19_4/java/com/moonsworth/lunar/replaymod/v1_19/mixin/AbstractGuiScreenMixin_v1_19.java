@@ -51,7 +51,10 @@ public abstract class AbstractGuiScreenMixin_v1_19<T> {
         this.renderInfo = x;
     }
 
-    // A hack so that when it checks renderInfo.layer == 0, it'll return -4 so we can overwrite it...
+    /**
+     * @author Tre
+     * @reason A hack so that when it checks renderInfo.layer == 0, it'll return -4 so we can overwrite it...
+     */
     @Redirect(
             method = "draw",
             at = @At(

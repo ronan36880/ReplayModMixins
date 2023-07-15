@@ -33,7 +33,6 @@
         "GuiRecordingOverlayMixin_v1_18",
         "GuiReplayViewerMixin_v1_18",
         "GuiSavingReplayMixin_v1_18",
-        "KeyBindingRegisterMixin_v1_18",
         "MCVerMixin_v1_18",
         "MinecraftMixin_v1_18",
         "PacketListenerMixin_v1_18",

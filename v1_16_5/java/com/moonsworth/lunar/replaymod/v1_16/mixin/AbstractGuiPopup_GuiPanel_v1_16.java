@@ -14,6 +14,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class AbstractGuiPopup_GuiPanel_v1_16 extends AbstractGuiContainer {
 
     /**
+     * @author Alexandre
      * @reason Use Lunar UI texture
      */
     @Redirect(

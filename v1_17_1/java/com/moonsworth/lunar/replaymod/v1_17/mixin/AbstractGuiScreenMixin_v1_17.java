@@ -1,7 +1,5 @@
 package com.moonsworth.lunar.replaymod.v1_17.mixin;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.moonsworth.lunar.bridge.BridgeManager;
 import com.moonsworth.lunar.bridge.blaze3d.vertex.PoseStackBridge;
 import com.moonsworth.lunar.bridge.client.renderer.RenderContextModern;
 import com.moonsworth.lunar.client.Lunar;
@@ -18,23 +16,20 @@ import com.replaymod.lib.de.johni0702.minecraft.gui.element.GuiLabel;
 import com.replaymod.lib.de.johni0702.minecraft.gui.utils.lwjgl.Dimension;
 import com.replaymod.lib.de.johni0702.minecraft.gui.utils.lwjgl.Point;
 import com.replaymod.lib.de.johni0702.minecraft.gui.utils.lwjgl.ReadableDimension;
-import net.minecraft.client.gui.screens.Screen;
-import org.checkerframework.checker.units.qual.A;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(AbstractGuiScreen.class)
 public abstract class AbstractGuiScreenMixin_v1_17<T> {
 
-    @Shadow
-    public AbstractGuiScreen.Background background;
-    @Shadow
-    public AbstractGuiScreen<?>.MinecraftGuiScreen wrapped;
-    @Shadow
-    public GuiLabel title;
+    @Shadow public AbstractGuiScreen.Background background;
+    @Shadow public AbstractGuiScreen<?>.MinecraftGuiScreen wrapped;
+    @Shadow public GuiLabel title;
     private ReadableDimension size;
     private RenderInfo renderInfo;
     private static int lunarPanoramaTimer;
@@ -56,7 +51,10 @@ public abstract class AbstractGuiScreenMixin_v1_17<T> {
         this.renderInfo = x;
     }
 
-    // A hack so that when it checks renderInfo.layer == 0, it'll return -4 so we can overwrite it...
+    /**
+     * @author Tre
+     * @reason A hack so that when it checks renderInfo.layer == 0, it'll return -4 so we can overwrite it...
+     */
     @Redirect(
             method = "draw",
             at = @At(

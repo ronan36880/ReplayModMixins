@@ -24,5 +24,4 @@ public class GuiHandlerMixin_v1_19 {
         }
     }
 
-
 }

@@ -16,7 +16,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(targets = "com.replaymod.lib.de.johni0702.minecraft.gui.element.advanced.AbstractGuiDropdownMenu$DropdownEntry")
 public abstract class AbstractGuiDropdownEntryMixin_v1_20 extends AbstractGuiClickable {
 
-
     @Redirect(
             method = "draw",
             at = @At(

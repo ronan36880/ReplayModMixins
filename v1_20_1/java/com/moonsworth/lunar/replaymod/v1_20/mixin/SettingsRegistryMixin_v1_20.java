@@ -47,7 +47,8 @@ public class SettingsRegistryMixin_v1_20 {
     }
 
     /**
-     * @author Tre - we don't wanna use their settings.
+     * @author Tre
+     * @reason We don't wanna use their settings.
      */
     @Overwrite
     public void register(SettingsRegistry.SettingKey<?> key) {

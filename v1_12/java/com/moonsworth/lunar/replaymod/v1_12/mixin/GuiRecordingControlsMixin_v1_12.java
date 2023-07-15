@@ -18,11 +18,11 @@ import java.util.Collection;
 @Mixin(GuiRecordingControls.class)
 public abstract class GuiRecordingControlsMixin_v1_12 implements GuiRecordingControlsBridge {
 
-    @Shadow public boolean paused;
+    @Shadow private boolean paused;
 
-    @Shadow public boolean stopped;
+    @Shadow private boolean stopped;
 
-    @Shadow public abstract void updateState();
+    @Shadow protected abstract void updateState();
 
     @Inject(
             method = "updateState",

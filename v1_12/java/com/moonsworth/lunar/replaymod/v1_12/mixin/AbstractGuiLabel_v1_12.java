@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class AbstractGuiLabel_v1_12<T extends AbstractGuiLabel<T>> {
 
     /**
+     * @author Alexandre
      * @reason The Lunar UI has a black background, so we don't want to draw black text
      */
     @Inject(

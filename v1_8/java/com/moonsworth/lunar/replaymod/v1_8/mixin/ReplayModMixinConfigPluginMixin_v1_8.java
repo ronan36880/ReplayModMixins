@@ -8,9 +8,8 @@ import org.spongepowered.asm.mixin.Overwrite;
 public class ReplayModMixinConfigPluginMixin_v1_8 {
 
     /**
-     * Overwriting to remove the reference to LL's Launch.
-     *
      * @author phase
+     * @reason Overwriting to remove the reference to LL's Launch.
      */
     @Overwrite
     public static boolean hasClass(String name) {
