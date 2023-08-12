@@ -9,6 +9,7 @@ import com.moonsworth.lunar.client.util.Ref;
 import com.moonsworth.lunar.replaymod.v1_18.link.LunarSettingKeys;
 import com.moonsworth.lunar.replaymod.v1_18.link.ReplayModGuiLink_Impl;
 import com.replaymod.core.SettingsRegistry;
+import org.intellij.lang.annotations.Subst;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
@@ -16,6 +17,7 @@ import org.spongepowered.asm.mixin.Shadow;
 public class SettingKeysMixin_v1_18<T> implements LunarSettingKeys {
 
     @Shadow public T defaultValue;
+    @Subst("optionId")
     @Shadow public String key;
     private Option option;
     private boolean wasPreInit = false;
