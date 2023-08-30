@@ -14,6 +14,7 @@ import com.moonsworth.lunar.client.management.managers.CosmeticManager;
 import com.moonsworth.lunar.client.options.Option;
 import com.moonsworth.lunar.client.util.Ref;
 import com.replaymod.core.ReplayMod;
+import com.replaymod.core.versions.MCVer;
 import com.replaymod.editor.gui.MarkerProcessor;
 import com.replaymod.lib.de.johni0702.minecraft.gui.utils.EventRegistrations;
 import com.replaymod.recording.ReplayModRecording;
@@ -22,6 +23,7 @@ import com.replaymod.recording.Setting;
 import com.replaymod.recording.gui.GuiRecordingControls;
 import com.replaymod.recording.handler.ConnectionEventHandler;
 import com.replaymod.recording.packet.PacketListener;
+import com.replaymod.render.hooks.EntityRendererHandler;
 import com.replaymod.replay.InputReplayTimer;
 import com.replaymod.replay.ReplayModReplay;
 import com.replaymod.replay.events.ReplayClosedCallback;
@@ -280,5 +282,11 @@ public class ReplayModGuiLink_Impl extends EventRegistrations implements ReplayM
     @Override
     public Map<String, Option> getOptions() {
         return optionsToRegister;
+    }
+
+    @Override
+    public boolean shouldHideNameTags() {
+        EntityRendererHandler handler = ((EntityRendererHandler.IEntityRenderer) MCVer.getMinecraft().gameRenderer).replayModRender_getHandler();
+        return handler != null && !handler.getSettings().isRenderNameTags();
     }
 }
