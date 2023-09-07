@@ -40,7 +40,6 @@
         "ReplayHandlerMixin_v1_20",
         "ReplayModBackendMixin_v1_20",
         "ReplayModMixin_v1_20",
-        "ReplayModNonMMLauncherMixin_v1_20",
         "ReplayModRecordingMixin_v1_20",
         "ScreenMixin_v1_20",
         "SettingKeysMixin_v1_20",

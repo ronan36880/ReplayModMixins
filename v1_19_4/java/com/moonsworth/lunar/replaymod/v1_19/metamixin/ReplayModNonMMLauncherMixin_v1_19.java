@@ -1,4 +1,4 @@
-package com.moonsworth.lunar.replaymod.v1_19.mixin;
+package com.moonsworth.lunar.replaymod.v1_19.metamixin;
 
 import com.replaymod.core.ReplayModMMLauncher;
 import com.replaymod.core.ReplayModMixinConfigPlugin;

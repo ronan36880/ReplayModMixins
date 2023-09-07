@@ -39,7 +39,6 @@
         "ReplayHandlerMixin_v1_12",
         "ReplayModBackendMixin_v1_12",
         "ReplayModMixin_v1_12",
-        "ReplayModMixinConfigPluginMixin_v1_12",
         "ReplayModRecordingMixin_v1_12",
         "SettingKeysMixin_v1_12",
         "SettingsRegistryMixin_v1_12",

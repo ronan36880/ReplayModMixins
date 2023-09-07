@@ -1,11 +1,11 @@
-package com.moonsworth.lunar.replaymod.v1_8.mixin;
+package com.moonsworth.lunar.replaymod.v1_12.metamixin;
 
 import com.replaymod.core.ReplayModMixinConfigPlugin;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(ReplayModMixinConfigPlugin.class)
-public class ReplayModMixinConfigPluginMixin_v1_8 {
+public class ReplayModMixinConfigPluginMixin_v1_12 {
 
     /**
      * @author phase

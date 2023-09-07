@@ -1,4 +1,4 @@
-package com.moonsworth.lunar.replaymod.v1_18.mixin;
+package com.moonsworth.lunar.replaymod.v1_16.metamixin;
 
 import com.replaymod.core.ReplayModMMLauncher;
 import com.replaymod.core.ReplayModMixinConfigPlugin;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Mixin(ReplayModNonMMLauncher.class)
-public class ReplayModNonMMLauncherMixin_v1_18 {
+public class ReplayModNonMMLauncherMixin_v1_16 {
 
     /**
      * @reason Nuke the original method's usage of Log4J loggers.
