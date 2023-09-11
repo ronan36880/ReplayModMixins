@@ -68,7 +68,7 @@ public class ReplayModGuiLink_v1_12 extends EventRegistrations implements Replay
                 return;
             }
             if (e.isNewState()) {
-                if (ReplayModRecording.instance.getConnectionEventHandler().getPacketListener() == null) {
+                if (ReplayModRecording.instance.getConnectionEventHandler() == null || ReplayModRecording.instance.getConnectionEventHandler().getPacketListener() == null) {
                     return;
                 }
                 boolean autoStart = ReplayMod.instance.getSettingsRegistry().get(Setting.AUTO_START_RECORDING);
