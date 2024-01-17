@@ -93,7 +93,7 @@ public class ReplayModGuiLink_v1_12 extends EventRegistrations implements Replay
                 ((GuiRecordingControlsBridge) ((ConnectionEventHandlerBridge) ReplayModRecording.instance.getConnectionEventHandler()).brige$getGuiControls()).bridge$updateState();
             } else {
                 ConnectionEventHandler connectionEventHandler = ReplayModRecording.instance.getConnectionEventHandler();
-                if (connectionEventHandler.getPacketListener() == null) {
+                if (connectionEventHandler == null || connectionEventHandler.getPacketListener() == null) {
                     return;
                 }
                 int timestamp = (int) connectionEventHandler.getPacketListener().getCurrentDuration();
@@ -210,7 +210,6 @@ public class ReplayModGuiLink_v1_12 extends EventRegistrations implements Replay
             return;
         }
         ReplayModRecording.instance.getConnectionEventHandler().getPacketListener().addMarker(MarkerProcessor.MARKER_NAME_END_CUT);
-        ReplayMod.instance.printInfoToChat("replaymod.chat.recordingresumed");
         ((GuiRecordingControlsBridge) ((ConnectionEventHandlerBridge) ReplayModRecording.instance.getConnectionEventHandler()).brige$getGuiControls()).bridge$setPaused(false);
         ((GuiRecordingControlsBridge) ((ConnectionEventHandlerBridge) ReplayModRecording.instance.getConnectionEventHandler()).brige$getGuiControls()).bridge$updateState();
         Lunar.getClient().getCosmeticManager().sync();
@@ -242,7 +241,6 @@ public class ReplayModGuiLink_v1_12 extends EventRegistrations implements Replay
         if (packetListener == null) {
             return;
         }
-        ReplayMod.instance.printInfoToChat("replaymod.chat.recordingstopped");
         int timestamp = (int) packetListener.getCurrentDuration();
         GuiRecordingControls guiControls = ((ConnectionEventHandlerBridge) ReplayModRecording.instance.getConnectionEventHandler()).brige$getGuiControls();
         if (!guiControls.isPaused()) {
@@ -262,7 +260,6 @@ public class ReplayModGuiLink_v1_12 extends EventRegistrations implements Replay
             return;
         }
         ReplayModRecording.instance.getConnectionEventHandler().getPacketListener().addMarker(MarkerProcessor.MARKER_NAME_START_CUT);
-        ReplayMod.instance.printInfoToChat("replaymod.chat.recordingpaused");
         ((GuiRecordingControlsBridge) ((ConnectionEventHandlerBridge) ReplayModRecording.instance.getConnectionEventHandler()).brige$getGuiControls()).bridge$setPaused(true);
         ((GuiRecordingControlsBridge) ((ConnectionEventHandlerBridge) ReplayModRecording.instance.getConnectionEventHandler()).brige$getGuiControls()).bridge$updateState();
     }

@@ -29,6 +29,7 @@
         "GuiBackgroundProcessMixin_v1_16",
         "GuiHandlerMixin_v1_16",
         "GuiHandlerReplayMixin_v1_16",
+        "GuiPathingMixin$11_v1_16",
         "GuiPathingMixin_v1_16",
         "GuiRecordingControlsMixin_v1_16",
         "GuiRecordingOverlayMixin_v1_16",

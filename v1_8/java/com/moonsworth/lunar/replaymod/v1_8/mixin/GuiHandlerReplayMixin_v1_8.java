@@ -1,7 +1,7 @@
 package com.moonsworth.lunar.replaymod.v1_8.mixin;
 
 import com.moonsworth.lunar.client.gui.framework.mainmenu.MainMenuBaseLCUI;
-import com.moonsworth.lunar.v1_8.wrapper.client.gui.ScreenInjector;
+import com.moonsworth.lunar.legacy.wrapper.client.gui.ScreenInjector;
 import com.replaymod.replay.handler.GuiHandler;
 import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraft.client.gui.GuiScreen;

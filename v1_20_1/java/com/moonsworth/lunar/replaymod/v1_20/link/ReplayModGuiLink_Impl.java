@@ -83,7 +83,7 @@ public class ReplayModGuiLink_Impl extends EventRegistrations implements ReplayM
                 ReplayModRecording.instance.getConnectionEventHandler().guiControls.updateState();
             } else  {
                 ConnectionEventHandler connectionEventHandler = ReplayModRecording.instance.getConnectionEventHandler();
-                if (connectionEventHandler.getPacketListener() == null) {
+                if (connectionEventHandler == null || connectionEventHandler.getPacketListener() == null) {
                     return;
                 }
                 int timestamp = (int) connectionEventHandler.getPacketListener().getCurrentDuration();
@@ -206,7 +206,6 @@ public class ReplayModGuiLink_Impl extends EventRegistrations implements ReplayM
             return;
         }
         ReplayModRecording.instance.getConnectionEventHandler().getPacketListener().addMarker(MarkerProcessor.MARKER_NAME_END_CUT);
-        ReplayMod.instance.printInfoToChat("replaymod.chat.recordingresumed");
         ReplayModRecording.instance.getConnectionEventHandler().guiControls.paused = false;
         ReplayModRecording.instance.getConnectionEventHandler().guiControls.updateState();
         Lunar.getClient().getCosmeticManager().sync();
@@ -238,7 +237,6 @@ public class ReplayModGuiLink_Impl extends EventRegistrations implements ReplayM
         if (packetListener == null) {
             return;
         }
-        ReplayMod.instance.printInfoToChat("replaymod.chat.recordingstopped");
         int timestamp = (int) packetListener.getCurrentDuration();
         GuiRecordingControls guiControls = ReplayModRecording.instance.getConnectionEventHandler().guiControls;
         if (!guiControls.isPaused()) {
@@ -258,7 +256,6 @@ public class ReplayModGuiLink_Impl extends EventRegistrations implements ReplayM
             return;
         }
         ReplayModRecording.instance.getConnectionEventHandler().getPacketListener().addMarker(MarkerProcessor.MARKER_NAME_START_CUT);
-        ReplayMod.instance.printInfoToChat("replaymod.chat.recordingpaused");
         ReplayModRecording.instance.getConnectionEventHandler().guiControls.paused = true;
         ReplayModRecording.instance.getConnectionEventHandler().guiControls.updateState();
     }

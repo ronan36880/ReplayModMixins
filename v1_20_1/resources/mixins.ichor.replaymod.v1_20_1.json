@@ -28,6 +28,7 @@
         "GuiBackgroundProcessMixin_v1_20",
         "GuiHandlerMixin_v1_20",
         "GuiHandlerReplayMixin_v1_20",
+        "GuiPathingMixin$11_v1_20",
         "GuiPathingMixin_v1_20",
         "GuiRecordingControlsMixin_v1_20",
         "GuiRecordingOverlayMixin_v1_20",
@@ -47,5 +48,5 @@
     ],
     "injectors": {
         "defaultRequire": 1
-  }
+    }
 }

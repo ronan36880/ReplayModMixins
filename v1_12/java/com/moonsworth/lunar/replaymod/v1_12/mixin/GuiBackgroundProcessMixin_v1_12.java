@@ -2,7 +2,7 @@ package com.moonsworth.lunar.replaymod.v1_12.mixin;
 
 import com.moonsworth.lunar.client.gui.framework.LCUI;
 import com.moonsworth.lunar.client.gui.framework.mainmenu.MainMenuBaseLCUI;
-import com.moonsworth.lunar.v1_12.wrapper.client.gui.ScreenInjector;
+import com.moonsworth.lunar.legacy.wrapper.client.gui.ScreenInjector;
 import com.replaymod.core.gui.GuiBackgroundProcesses;
 import net.minecraft.client.gui.GuiScreen;
 import org.spongepowered.asm.mixin.Mixin;
