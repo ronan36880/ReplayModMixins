@@ -16,7 +16,7 @@ public class MCVerMixin_v1_18 {
     /**
      * Don't use Accessor.
      *
-     * @author phase
+     * @author jado
      */
     @Overwrite
     public static void addButton(Screen screen, Button button) {

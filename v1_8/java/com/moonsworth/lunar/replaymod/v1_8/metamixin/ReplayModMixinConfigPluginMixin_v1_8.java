@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 public class ReplayModMixinConfigPluginMixin_v1_8 {
 
     /**
-     * @author phase
+     * @author jado
      * @reason Overwriting to remove the reference to LL's Launch.
      */
     @Overwrite
