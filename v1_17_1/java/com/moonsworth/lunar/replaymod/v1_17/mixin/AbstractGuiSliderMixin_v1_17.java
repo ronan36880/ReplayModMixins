@@ -56,7 +56,7 @@ public abstract class AbstractGuiSliderMixin_v1_17 extends AbstractGuiElement {
         // Draw slider
         LCUI.rect(renderContext, offsetX + 3f, offsetY + height - 7.5F, width - 6F, 3F, 0xAF1A1B1B);
         LCUI.drawCircle(renderContext, offsetX + sliderX + 4, offsetY + height - 6, 4F, 0xFF4f94fc);
-        BridgeManager.getGlStateManagerBridge().bridge$color(1F, 1F, 1F, 1F);
+        BridgeManager.getRenderSystem().bridge$color(1F, 1F, 1F, 1F);
 
         RenderSystem.enableBlend();
         RenderSystem.blendFuncSeparate(770, 771, 1, 0);

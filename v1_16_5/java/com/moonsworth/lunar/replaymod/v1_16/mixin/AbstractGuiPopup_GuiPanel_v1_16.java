@@ -26,12 +26,12 @@ public abstract class AbstractGuiPopup_GuiPanel_v1_16 extends AbstractGuiContain
     )
     public void ichor$draw$bindTexture(GuiRenderer instance, ResourceLocation resourceLocation) {
         var lunarUI = Lunar.getClient().getMods().getReplayMod().getLunarUi().get();
-        BridgeManager.getGlStateManagerBridge().bridge$color(1F, 1F, 1F, 1F);
-        BridgeManager.getGlStateManagerBridge().bridge$enableBlend();
-        BridgeManager.getGlStateManagerBridge().bridge$tryBlendFuncSeparate(770, 771, 1, 0);
-        BridgeManager.getGlStateManagerBridge().bridge$enableAlpha();
-        BridgeManager.getGlStateManagerBridge().bridge$alphaFunc(516, 0F);
-        BridgeManager.getGlStateManagerBridge().bridge$disableDepth();
+        BridgeManager.getRenderSystem().bridge$color(1F, 1F, 1F, 1F);
+        BridgeManager.getRenderSystem().bridge$enableBlend();
+        BridgeManager.getRenderSystem().bridge$tryBlendFuncSeparate(770, 771, 1, 0);
+        BridgeManager.getRenderSystem().bridge$enableAlpha();
+        BridgeManager.getRenderSystem().bridge$alphaFunc(516, 0F);
+        BridgeManager.getRenderSystem().bridge$disableDepth();
         if (lunarUI) {
             instance.bindTexture((ResourceLocation) ReplayMod.LUNAR_UI);
             return;

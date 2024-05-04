@@ -5,7 +5,7 @@
     "required": true,
     "compatibilityLevel": "JAVA_17",
     "mixins": [
-        "ReplayModNonMMLauncherMixin_v1_19"
+      "ReplayModNonMMLauncherMixin_v1_19"
     ],
     "injectors": {
         "defaultRequire": 1

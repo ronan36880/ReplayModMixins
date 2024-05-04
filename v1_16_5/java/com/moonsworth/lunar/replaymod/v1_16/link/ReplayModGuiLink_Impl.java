@@ -157,7 +157,7 @@ public class ReplayModGuiLink_Impl extends EventRegistrations implements ReplayM
 
     @Override
     public boolean showRecordingIndicator() {
-        return ReplayMod.instance.getSettingsRegistry().get(INDICATOR);
+        return ReplayMod.instance.getSettingsRegistry().get(Setting.INDICATOR);
     }
 
     @Override

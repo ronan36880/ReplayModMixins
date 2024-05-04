@@ -21,6 +21,6 @@ public abstract class AbstractGuiHorizontalScrollbarMixin_v1_16 extends Abstract
             )
     )
     public void ichor$draw(GuiRenderer instance, ResourceLocation resourceLocation) {
-        instance.bindTexture(Lunar.getClient().getMods().getReplayMod().getLunarUi().get() ? (ResourceLocation) ReplayMod.LUNAR_UI : TEXTURE);
+        instance.bindTexture(Lunar.getClient().getMods().getReplayMod().getLunarUi().get() ? (ResourceLocation) ReplayMod.LUNAR_UI : AbstractGuiElement.TEXTURE);
     }
 }

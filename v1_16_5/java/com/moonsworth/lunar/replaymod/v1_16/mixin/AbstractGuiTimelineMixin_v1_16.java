@@ -25,11 +25,11 @@ public abstract class AbstractGuiTimelineMixin_v1_16<T extends AbstractGuiTimeli
     public void ichor$draw$bindTexture(GuiRenderer instance, ResourceLocation resourceLocation) {
         var lunarUI = Lunar.getClient().getMods().getReplayMod().getLunarUi().get();
         if (lunarUI) {
-            BridgeManager.getGlStateManagerBridge().bridge$color(1F, 1F, 1F, 1F);
+            BridgeManager.getRenderSystem().bridge$color(1F, 1F, 1F, 1F);
             instance.bindTexture((ResourceLocation) ReplayMod.LUNAR_UI);
             return;
         }
-        instance.bindTexture(TEXTURE);
+        instance.bindTexture(AbstractGuiElement.TEXTURE);
     }
 
     @Redirect(
@@ -66,6 +66,6 @@ public abstract class AbstractGuiTimelineMixin_v1_16<T extends AbstractGuiTimeli
             instance.bindTexture((ResourceLocation) ReplayMod.LUNAR_UI);
             return;
         }
-        instance.bindTexture(TEXTURE);
+        instance.bindTexture(AbstractGuiElement.TEXTURE);
     }
 }
