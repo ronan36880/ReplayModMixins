@@ -1,9 +1,7 @@
 package com.moonsworth.lunar.replaymod.v1_18.mixin;
 
 import com.moonsworth.lunar.client.event.EventBus;
-import com.moonsworth.lunar.client.event.impl.EventState;
 import com.moonsworth.lunar.client.event.impl.world.EventRenderTick;
-import com.replaymod.core.events.PreRenderCallback;
 import com.replaymod.render.hooks.EntityRendererHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,8 +18,8 @@ public class EntityRendererHandlerMixin_v1_18 {
                     target = "Lcom/replaymod/core/events/PreRenderCallback;preRender()V"
             )
     )
-    public void ichor$renderWorld(float partialTicks, long finishTimeNano, CallbackInfo callbackInfo) {
-        EventBus.getBus().post(new EventRenderTick(EventState.PRE, partialTicks));
+    private void ichor$renderWorld(float partialTicks, long finishTimeNano, CallbackInfo callbackInfo) {
+        EventBus.getBus().post(new EventRenderTick.Pre(partialTicks));
     }
 
     @Inject(
@@ -31,7 +29,9 @@ public class EntityRendererHandlerMixin_v1_18 {
                     target = "Lcom/replaymod/core/events/PostRenderCallback;postRender()V"
             )
     )
-    public void ichor$renderWorld$post(float partialTicks, long finishTimeNano, CallbackInfo callbackInfo) {
-        EventBus.getBus().post(new EventRenderTick(EventState.POST, partialTicks));
+    private void ichor$renderWorld$post(float partialTicks, long finishTimeNano, CallbackInfo callbackInfo) {
+        EventBus.getBus().post(
+                EventRenderTick.Post.class,
+                () -> new EventRenderTick.Post(partialTicks));
     }
 }

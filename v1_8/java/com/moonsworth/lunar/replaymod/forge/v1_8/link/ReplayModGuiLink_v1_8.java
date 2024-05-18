@@ -6,7 +6,6 @@ import com.moonsworth.lunar.bridge.client.settings.KeyBindingBridge;
 import com.moonsworth.lunar.bridge.util.ResourceLocationBridge;
 import com.moonsworth.lunar.client.Lunar;
 import com.moonsworth.lunar.client.event.EventBus;
-import com.moonsworth.lunar.client.event.impl.EventState;
 import com.moonsworth.lunar.client.event.impl.gui.EventGuiDrawScreen;
 import com.moonsworth.lunar.client.event.impl.input.EventScrollSwapItem;
 import com.moonsworth.lunar.client.event.impl.internal.EventModUpdate;
@@ -58,12 +57,15 @@ public class ReplayModGuiLink_v1_8 extends EventRegistrations implements ReplayM
     public static CosmeticInstance cosmeticInstance = null;
 
     public ReplayModGuiLink_v1_8() {
-        EventBus.getBus().register(EventGuiDrawScreen.class, (e) -> {
-            if (e.getState() == EventState.PRE) {
-                MinecraftForge.EVENT_BUS.post(new GuiScreenEvent.DrawScreenEvent.Pre((GuiScreen) e.getScreenBridge(), e.getMouseX(), e.getMouseY(), e.getPartialTicks()));
-            } else {
-                MinecraftForge.EVENT_BUS.post(new GuiScreenEvent.DrawScreenEvent.Post((GuiScreen) e.getScreenBridge(), e.getMouseX(), e.getMouseY(), e.getPartialTicks()));
-            }
+        EventBus.getBus().register(EventGuiDrawScreen.Pre.class, (e) -> {
+            MinecraftForge.EVENT_BUS.post(new GuiScreenEvent.DrawScreenEvent.Pre(
+                    (GuiScreen) e.getScreenBridge(), e.getMouseX(), e.getMouseY(), e.getPartialTicks())
+            );
+        });
+        EventBus.getBus().register(EventGuiDrawScreen.Post.class, (e) -> {
+            MinecraftForge.EVENT_BUS.post(new GuiScreenEvent.DrawScreenEvent.Post(
+                    (GuiScreen) e.getScreenBridge(), e.getMouseX(), e.getMouseY(), e.getPartialTicks())
+            );
         });
         EventBus.getBus().register(EventModUpdate.class, (e) -> {
             if (!(e.getMod() instanceof com.moonsworth.lunar.client.feature.mod.replaymod.ReplayMod)) {
