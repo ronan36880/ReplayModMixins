@@ -36,6 +36,7 @@
       "GuiReplayViewerMixin_v1_16",
       "GuiSavingReplayMixin_v1_16",
       "MCVerMixin_v1_16",
+      "MinecraftGuiScreenMixin_v1_16",
       "MinecraftMixin_v1_16",
       "PacketListenerMixin_v1_16",
       "PathPreviewRendererMixin_v1_16",

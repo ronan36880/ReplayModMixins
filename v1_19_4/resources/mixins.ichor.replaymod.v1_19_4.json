@@ -35,6 +35,7 @@
       "GuiReplayViewerMixin_v1_19",
       "GuiSavingReplayMixin_v1_19",
       "MCVerMixin_v1_19",
+      "MinecraftGuiScreenMixin_v1_19",
       "MinecraftMixin_v1_19",
       "PacketListenerMixin_v1_19",
       "PboOpenGlFrameCapturerMixin_v1_19",
