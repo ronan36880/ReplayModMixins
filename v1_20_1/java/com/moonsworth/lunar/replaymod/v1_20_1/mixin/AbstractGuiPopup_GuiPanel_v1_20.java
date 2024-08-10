@@ -29,7 +29,6 @@ public abstract class AbstractGuiPopup_GuiPanel_v1_20 extends AbstractGuiContain
         BridgeManager.getRenderSystem().bridge$color(1F, 1F, 1F, 1F);
         BridgeManager.getRenderSystem().bridge$enableBlend();
         BridgeManager.getRenderSystem().bridge$tryBlendFuncSeparate(770, 771, 1, 0);
-        BridgeManager.getRenderSystem().bridge$enableAlpha();
         BridgeManager.getRenderSystem().bridge$alphaFunc(516, 0F);
         BridgeManager.getRenderSystem().bridge$disableDepth();
         if (lunarUI) {
