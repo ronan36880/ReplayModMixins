@@ -22,7 +22,7 @@
       "DisableFastRenderMixin_v1_20",
       "EntityRendererHandlerMixin_v1_20",
       "FullBrightnessMixin_v1_20",
-      "FullReplaySenderMixin_v1_20",
+      "PacketDecoderMixin_v1_20",
       "GameRenderMixin_v1_20",
       "GuiBackgroundProcessMixin_Element_v1_20",
       "GuiBackgroundProcessMixin_v1_20",

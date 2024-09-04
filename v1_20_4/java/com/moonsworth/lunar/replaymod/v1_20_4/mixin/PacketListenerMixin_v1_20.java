@@ -22,7 +22,7 @@ public abstract class PacketListenerMixin_v1_20 {
     @Shadow public abstract ConnectionProtocol getConnectionState();
 
     @Shadow
-    public static Packet encodeMcPacket(ConnectionProtocol connectionProtocol, net.minecraft.network.protocol.Packet packet) throws Exception {
+    public Packet encodeMcPacket(ConnectionProtocol connectionProtocol, net.minecraft.network.protocol.Packet packet) throws Exception {
         return null;
     }
 
@@ -35,7 +35,7 @@ public abstract class PacketListenerMixin_v1_20 {
                             "Lnet/minecraft/network/protocol/Packet;)Lcom/replaymod/replaystudio/protocol/Packet;"
             )
     )
-    private Packet ichor$lunar$scuffedReplayPacketWrapper(ConnectionProtocol connectionProtocol, net.minecraft.network.protocol.Packet packet) throws Exception {
+    private Packet ichor$lunar$scuffedReplayPacketWrapper(PacketListener instance, ConnectionProtocol connectionProtocol, net.minecraft.network.protocol.Packet packet) throws Exception {
         try {
             if (packet instanceof ReplayModScuffedPacketWrapped wrappedPacket) {
                 return getLunarPacket(wrappedPacket.getAssetPacket().toByteArray());

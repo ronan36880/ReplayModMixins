@@ -1,7 +1,7 @@
-package com.moonsworth.lunar.replaymod.v1_20_2.mixin;
+package com.moonsworth.lunar.replaymod.v1_21_0.mixin;
 
-import com.moonsworth.lunar.replaymod.v1_20_2.link.ReplayModGuiLink_Impl;
-import com.moonsworth.lunar.replaymod.v1_20_2.link.ReplayModScuffedPacketWrapped;
+import com.moonsworth.lunar.replaymod.v1_21_0.link.ReplayModGuiLink_Impl;
+import com.moonsworth.lunar.replaymod.v1_21_0.link.ReplayModScuffedPacketWrapped;
 import com.replaymod.core.versions.MCVer;
 import com.replaymod.editor.gui.MarkerProcessor;
 import com.replaymod.recording.packet.PacketListener;
@@ -22,9 +22,7 @@ public abstract class PacketListenerMixin_v1_20 {
     @Shadow public abstract ConnectionProtocol getConnectionState();
 
     @Shadow
-    public Packet encodeMcPacket(ConnectionProtocol connectionProtocol, net.minecraft.network.protocol.Packet packet) throws Exception {
-        return null;
-    }
+    public abstract Packet encodeMcPacket(ConnectionProtocol connectionProtocol, net.minecraft.network.protocol.Packet packet) throws Exception;
 
     @Redirect(
             method = "save(Lnet/minecraft/network/protocol/Packet;)V",
