@@ -30,7 +30,7 @@ public class SettingKeysMixin_v1_19<T> implements LunarSettingKeys {
             } else {
                 option = Ref.client().getMods().getReplayMod().getOptions().stream().filter(option1 -> option1.getId().startsWith(key)).findFirst().orElseGet(() -> {
                     Option option1 = createOption(false);
-                    Lunar.getClient().getMods().getReplayMod().getOptions().add(option1);
+                    Lunar.getClient().getMods().getReplayMod().getTopOptions().add(option1);
                     return option1;
                 });
             }
