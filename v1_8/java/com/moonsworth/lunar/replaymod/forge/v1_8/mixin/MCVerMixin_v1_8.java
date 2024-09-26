@@ -1,5 +1,6 @@
 package com.moonsworth.lunar.replaymod.forge.v1_8.mixin;
 
+import com.lunarclient.gameipc.browser.v1.OpenUrlRequest;
 import com.moonsworth.lunar.bridge.BridgeManager;
 import com.moonsworth.lunar.client.util.BrowserUtil;
 import com.replaymod.core.versions.MCVer;
@@ -40,6 +41,6 @@ public class MCVerMixin_v1_8 {
      */
     @Overwrite
     public static void openURL(URI url) {
-        BrowserUtil.openURL(url);
+        BrowserUtil.openURL(url, OpenUrlRequest.Initiator.INITIATOR_UNSPECIFIED);
     }
 }
