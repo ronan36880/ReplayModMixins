@@ -19,7 +19,7 @@ public class EntityRendererHandlerMixin_v1_20 {
             )
     )
     private void ichor$renderWorld(float partialTicks, long finishTimeNano, CallbackInfo callbackInfo) {
-        EventBus.getBus().post(new EventRenderTick.Pre(partialTicks));
+        EventBus.getBus().post(EventRenderTick.Pre.class, () -> new EventRenderTick.Pre(partialTicks));
     }
 
     @Inject(
@@ -30,8 +30,6 @@ public class EntityRendererHandlerMixin_v1_20 {
             )
     )
     private void ichor$renderWorld$post(float partialTicks, long finishTimeNano, CallbackInfo callbackInfo) {
-        EventBus.getBus().post(
-                EventRenderTick.Post.class,
-                () -> new EventRenderTick.Post(partialTicks));
+        EventBus.getBus().post(EventRenderTick.Post.class, () -> new EventRenderTick.Post(partialTicks));
     }
 }
