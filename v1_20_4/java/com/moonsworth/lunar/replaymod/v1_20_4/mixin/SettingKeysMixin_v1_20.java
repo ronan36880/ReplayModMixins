@@ -1,10 +1,12 @@
 package com.moonsworth.lunar.replaymod.v1_20_4.mixin;
 
 import com.moonsworth.lunar.client.Lunar;
+import com.moonsworth.lunar.client.feature.FeatureOptions;
 import com.moonsworth.lunar.client.gui.framework.components.TextOption;
 import com.moonsworth.lunar.client.options.BooleanOption;
 import com.moonsworth.lunar.client.options.NumberOption;
 import com.moonsworth.lunar.client.options.Option;
+import com.moonsworth.lunar.client.trait.Traits;
 import com.moonsworth.lunar.client.util.Ref;
 import com.moonsworth.lunar.replaymod.v1_20_4.link.LunarSettingKeys;
 import com.moonsworth.lunar.replaymod.v1_20_4.link.ReplayModGuiLink_Impl;
@@ -28,9 +30,10 @@ public class SettingKeysMixin_v1_20<T> implements LunarSettingKeys {
             if (Ref.client() == null || Ref.client().getMods() == null) {
                 option = createOption(true);
             } else {
-                option = Ref.client().getMods().getReplayMod().getOptions().stream().filter(option1 -> option1.getId().startsWith(key)).findFirst().orElseGet(() -> {
+                FeatureOptions featureOptions = Ref.client().getMods().getReplayMod().getOrThrow(Traits.FEATURE_OPTIONS);
+                option = featureOptions.getOptions().stream().filter(option1 -> option1.getId().startsWith(key)).findFirst().orElseGet(() -> {
                     Option option1 = createOption(false);
-                    Lunar.getClient().getMods().getReplayMod().getTopOptions().add(option1);
+                    featureOptions.getTopOptions().add(option1);
                     return option1;
                 });
             }
